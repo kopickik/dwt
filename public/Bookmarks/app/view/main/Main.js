@@ -7,6 +7,8 @@ Ext.define('Bookmarks.view.main.Main', {
         'Ext.window.MessageBox',
         'Ext.grid.Panel',
 
+        'Ext.'
+
         'Bookmarks.view.main.MainController',
         'Bookmarks.view.main.MainModel'
     ],
