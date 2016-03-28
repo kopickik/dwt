@@ -37,12 +37,6 @@ Thumbs.db
 
 # Custom ##############
 #######################
-public/Bookmaks/.sencha
-public/Bookmaks/build
-public/Bookmaks/bootstrap.*
-public/Bookmaks/classic.json
-public/Bookmaks/ext
-public/Bookmaks/modern.json
+
 node_modules
 bower_components
-public/Bookmaks/sass/example/**/*
