@@ -19,6 +19,9 @@ API routes are defined in `server.js`. The frontend consumes these routes in the
 5. App will be available on localhost:3200 (by default)
 6. Profit
 
+
+APP-PROD-ATLASSIAN-BITBUCKET-MRX-CREATOR
+
 ### WIP
 
-More coming soon.
+More coming soon.  This repo is based on this blog post: [http://elmasse.github.io/nodejs/using-jwt-with-extjs.html](http://elmasse.github.io/nodejs/using-jwt-with-extjs.html)
