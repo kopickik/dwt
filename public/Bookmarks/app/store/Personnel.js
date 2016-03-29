@@ -14,6 +14,12 @@ Ext.define('Bookmarks.store.Personnel', {
         { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
     ]},
 
+    getUserByPhoneNumber: function(nbr) {
+        var i = this.find('phone', nbr);
+        if (i < 0) { return null; }
+        return this.getAt(i);
+    },
+
     proxy: {
         type: 'memory',
         reader: {

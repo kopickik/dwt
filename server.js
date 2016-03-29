@@ -57,6 +57,6 @@ app.get('/api/bookmarks', function (req, res) {
 
 // more endpoints here...
 
-app.listen(3200, function() {
-    console.log('Express app listening on port 3200.');
+app.listen(3000, function() {
+    console.log('Express app listening on port 3000.');
 });
