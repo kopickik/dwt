@@ -5,7 +5,6 @@ Ext.define('Bookmarks.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-        'Ext.grid.Panel',
 
         'Bookmarks.view.main.MainController',
         'Bookmarks.view.main.MainModel'
@@ -14,6 +13,12 @@ Ext.define('Bookmarks.view.main.Main', {
     controller: 'main',
     viewModel: 'main',
     plugins: 'viewport',
+
+    ui: 'navigation',
+
+    tabBarHeaderPosition: 1,
+    titleRotation: 0,
+    tabRotation: 0,
 
     header: {
         layout: {
@@ -68,7 +73,7 @@ Ext.define('Bookmarks.view.main.Main', {
 
     items: [{
         title: 'Home',
-        iconCls: 'fa-home',
+        iconCls: 'x-fa fa-home',
         // the following grid shares a store with the classic version's grid as well
         items: [{
             xtype: 'grid',

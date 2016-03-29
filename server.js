@@ -15,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', express.static(__dirname + '/public/Bookmarks'));
 
+app.disable('x-powered-by');
+
 // protect our api
 app.use('/api', expressJwt({ secret: secret }));
 

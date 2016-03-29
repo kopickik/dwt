@@ -18,7 +18,7 @@ Ext.application({
     // modern toolkit, the main view will be added to the Viewport.
     //
     // mainView: 'Bookmarks.view.main.Main'
-    mainView: location.search.match('unittest') ? null : 'Bookmarks.view.main.Main'
+    // mainView: location.search.match('unittest') ?  : 'Bookmarks.view.main.Main'
 	
     //-------------------------------------------------------------------------
     // Most customizations should be made to Bookmarks.Application. If you need to

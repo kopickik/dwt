@@ -15,8 +15,12 @@ Ext.define('Bookmarks.Application', {
     views: ['login.Login', 'main.Main'],
 
     launch: function () {
-        var token = localStorage.getItem('user-token');
+        var loggedIn;
 
-        Ext.widget(token ? 'app-main' : 'login');
+        loggedIn = localStorage.getItem('user-token');
+
+        Ext.create({
+            xtype: loggedIn? 'app-main' : 'login'
+        });
     }
 });

@@ -1,49 +1,61 @@
 Ext.define('Bookmarks.view.login.Login', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.window.Window',
     xtype: 'login',
 
     requires: [
+        'Bookmarks.view.login.LoginModel',
         'Bookmarks.view.login.LoginController',
-        'Ext.form.Panel'
+
+        'Ext.form.Panel',
+        'Ext.ProgressBar',
+        'Ext.Promise'
     ],
 
     controller: 'login',
-    plugins: 'viewport',
+    viewModel: 'login',
+    closable: false,
+    draggable: false,
+    resizable: false,
+    autoShow: true,
+    width: 420,
+    layout: 'card',
 
-    layout: 'center',
+    header: {
+        title: {
+            bind: {
+                text: '{formTitle}'
+            }
+        }
+    },
 
     items: [{
-        title: 'Login Window',
-        width: 400,
-        border: '1px',
-        borderColor: '#232323',
-        items: {
-            xtype: 'form',
-            bodyPadding: 10,
-            reference: 'form',
-            items: [{
-                xtype: 'textfield',
-                name: 'username',
-                fieldLabel: 'Username',
-                allowBlank: false
-            }, {
-                xtype: 'textfield',
-                name: 'password',
-                fieldLabel: 'Password',
-                allowBlank: 'false',
-                inputType: 'password'
-            }, {
-                xtype: 'displayfield',
-                hideEmptyLabel: false,
-                value: 'Username and password are case sensitive.'
-            }],
-            buttons: [{
-                text: 'Login',
-                formBind: true,
-                listeners: {
-                    click: 'doLogin'
-                }
-            }]
-        }
+        xtype: 'form',
+        reference: 'form',
+        bodyPadding: 10,
+        items: [{
+            xtype: 'textfield',
+            name: 'username',
+            fieldLabel: 'Username',
+            allowBlank: false
+        }, {
+            xtype: 'textfield',
+            name: 'password',
+            fieldLabel: 'Password',
+            allowBlank: false,
+            inputType: 'password'
+        }, {
+            xtype: 'displayfield',
+            hideEmptyLabel: false,
+            value: 'Username and password are case sensitive.'
+        }],
+        buttons: [{
+            text: 'Login',
+            formBind: true,
+            listeners: {
+                click: 'doLogin'
+            },
+            iconCls: 'x-fa fa-check'
+        }]
     }]
+
 });
