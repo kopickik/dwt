@@ -17,6 +17,7 @@
     "jsonwebtoken": "^5.7.0"
   },
   "devDependencies": {
+    "font-awesome": "^4.5.0",
     "siesta": "^0.2.9"
   }
 }

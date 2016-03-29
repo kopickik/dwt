@@ -34,7 +34,7 @@ Ext.define('Bookmarks.view.main.Main', {
             text: 'Logout',
             margin: '10 0',
             handler: 'onLogoutClick',
-            iconCls: 'fa-power'
+            iconCls: 'fa-power-off'
         }]
     },
     tabBar: {
