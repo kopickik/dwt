@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(__dirname + '/public/Bookmarks'));
 
 app.disable('x-powered-by');
+app.use(cookieParser());
 
 // protect our api
 app.use('/api', expressJwt({ secret: secret }));
@@ -26,22 +27,26 @@ app.post('/authenticate', function (req, res) {
 
     if ( !(username === 'jsmith' && password === 'pword' )) {
         res.status(401).send('User or password is invalid.<br>Try jsmith / pword.');
+        res.end();
     }
+    else {
+        var user = {
+            name: 'Hello World',
+            email: 'hello@example.com',
+            id: 999
+        };
 
-    var user = {
-        name: 'Hello World',
-        email: 'hello@example.com',
-        id: 999
-    };
+        // generate the jwt token with our user info
+        var token = jwt.sign(user, secret, {expiresIn: 7200});// two hours in seconds
 
-    // generate the jwt token with our user info
-    var token = jwt.sign(user, secret, {expiresIn: 7200});// two hours in seconds
+        // the user object is included in the token!
+        res.json({
+            user: user,// this is the only intended reference in our extjs app
+            token: token
+        });
+    }
+    res.end();
 
-    // the user object is included in the token!
-    res.json({
-        user: user,// this is the only intended reference in our extjs app
-        token: token
-    });
 });
 
 // @endpoint [/api/bookmarks]

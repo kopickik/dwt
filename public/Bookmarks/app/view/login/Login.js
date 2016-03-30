@@ -30,6 +30,7 @@ Ext.define('Bookmarks.view.login.Login', {
         bodyPadding: 10,
         items: [{
             xtype: 'textfield',
+            id: 'usernameField',
             name: 'username',
             fieldLabel: 'Username',
             allowBlank: false
@@ -41,7 +42,7 @@ Ext.define('Bookmarks.view.login.Login', {
             inputType: 'password',
             listeners: {
                 specialkey: function (field, e) {
-                    if (field.getValue() !== null) {
+                    if (field.getValue() !== '') {
                         if (e.getKey() === e.ENTER) {
                             // submit the form!
                             Ext.getCmp('loginButton').fireEvent('click');

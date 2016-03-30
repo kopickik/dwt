@@ -14,10 +14,12 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-jwt": "^3.3.0",
-    "jsonwebtoken": "^5.7.0"
+    "jsonwebtoken": "^5.7.0",
+    "passport": "^0.3.2"
   },
   "devDependencies": {
     "font-awesome": "^4.5.0",
+    "passport-local": "^1.0.0",
     "siesta": "^0.2.9"
   }
 }

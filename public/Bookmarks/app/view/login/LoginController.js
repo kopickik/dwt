@@ -21,7 +21,8 @@ Ext.define('Bookmarks.view.login.LoginController', {
             },
             failure: function () {
                 me.clearToken();
-                Ext.Msg.alert('Error', 'Username or Password are invalid.');
+                Ext.getCmp('usernameField').focus();
+                Ext.Msg.alert('Error', 'Username or password are invalid.');
             }
         });
     },
