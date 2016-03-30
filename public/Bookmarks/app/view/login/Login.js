@@ -4,11 +4,7 @@ Ext.define('Bookmarks.view.login.Login', {
 
     requires: [
         'Bookmarks.view.login.LoginModel',
-        'Bookmarks.view.login.LoginController',
-
-        'Ext.form.Panel',
-        'Ext.ProgressBar',
-        'Ext.Promise'
+        'Bookmarks.view.login.LoginController'
     ],
 
     controller: 'login',
@@ -42,7 +38,17 @@ Ext.define('Bookmarks.view.login.Login', {
             name: 'password',
             fieldLabel: 'Password',
             allowBlank: false,
-            inputType: 'password'
+            inputType: 'password',
+            listeners: {
+                specialkey: function (field, e) {
+                    if (field.getValue() !== null) {
+                        if (e.getKey() === e.ENTER) {
+                            // submit the form!
+                            Ext.getCmp('loginButton').fireEvent('click');
+                        }
+                    }
+                }
+            }
         }, {
             xtype: 'displayfield',
             hideEmptyLabel: false,
@@ -50,6 +56,7 @@ Ext.define('Bookmarks.view.login.Login', {
         }],
         buttons: [{
             text: 'Login',
+            id: 'loginButton',
             formBind: true,
             listeners: {
                 click: 'doLogin'
