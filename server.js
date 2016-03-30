@@ -7,7 +7,6 @@ var express             = require('express'),
     cookieParser        = require('cookie-parser');
 
 var secret = 'Your4w3s0me-S3cr3t';
-
 var app = express();
 
 app.use(bodyParser.json());
@@ -25,8 +24,8 @@ app.post('/authenticate', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
 
-    if ( !(username === 'hello' && password === 'world' )) {
-        res.status(401).send('User or password is invalid.');
+    if ( !(username === 'jsmith' && password === 'pword' )) {
+        res.status(401).send('User or password is invalid.<br>Try jsmith / pword.');
     }
 
     var user = {
@@ -42,7 +41,7 @@ app.post('/authenticate', function (req, res) {
     res.json({
         user: user,// this is the only intended reference in our extjs app
         token: token
-    })
+    });
 });
 
 // @endpoint [/api/bookmarks]
@@ -51,9 +50,7 @@ app.get('/api/bookmarks', function (req, res) {
         id: 1001, name: 'sencha', url: 'http://www.sencha.com',
     }, {
         id: 1002, name: 'jwt.io', url: 'http://jwt.io'
-    }
-    ];
-
+    }];
     res.json({data: bookmarks});
 });
 
