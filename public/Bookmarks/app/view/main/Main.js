@@ -28,13 +28,13 @@ Ext.define('Bookmarks.view.main.Main', {
             text: 'Bookmarks',
             flex: 0
         },
-        iconCls: 'fa-twitter',
+        iconCls: 'x-fa fa-twitter',
         items: [{
             xtype: 'button',
             text: 'Logout',
             margin: '10 0',
             handler: 'onLogoutClick',
-            iconCls: 'fa-power-off'
+            iconCls: 'x-fa fa-power-off'
         }]
     },
     tabBar: {
@@ -86,19 +86,19 @@ Ext.define('Bookmarks.view.main.Main', {
         }]
     }, {
         title: 'Users',
-        iconCls: 'fa-user',
+        iconCls: 'x-fa fa-user',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
         title: 'Groups',
-        iconCls: 'fa-users',
+        iconCls: 'x-fa fa-users',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
         title: 'Settings',
-        iconCls: 'fa-cog',
+        iconCls: 'x-fa fa-cog',
         bind: {
             html: '{loremIpsum}'
         }
