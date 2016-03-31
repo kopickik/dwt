@@ -19,7 +19,6 @@ Ext.define('Bookmarks.view.main.MainController', {
     },
 
     onLogoutClick: function () {
-
         localStorage.removeItem('user-token');
         this.getView().destroy();
         Ext.create({

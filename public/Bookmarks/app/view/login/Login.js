@@ -42,7 +42,7 @@ Ext.define('Bookmarks.view.login.Login', {
             inputType: 'password',
             listeners: {
                 specialkey: function (field, e) {
-                    if (field.getValue() !== '') {
+                    if (field.getValue() !== '' && Ext.getCmp('usernameField').getValue() !== '') {
                         if (e.getKey() === e.ENTER) {
                             // submit the form!
                             Ext.getCmp('loginButton').fireEvent('click');
