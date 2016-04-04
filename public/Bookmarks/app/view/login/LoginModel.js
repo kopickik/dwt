@@ -4,6 +4,6 @@ Ext.define('Bookmarks.view.login.LoginModel', {
     alias: 'viewmodel.login',
 
     data: {
-        formTitle: '<i class=\'fa fa-lock\'></i> MERLIN Development Login - This is NOT PRODUCTION'
+        formTitle: '<span class=\'x-fa fa-lock\'></span> MERLIN Development Login - This is NOT PRODUCTION'
     }
 });

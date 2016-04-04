@@ -13,7 +13,7 @@ Ext.define('Bookmarks.view.login.Login', {
     draggable: false,
     resizable: false,
     autoShow: true,
-    width: 420,
+    width: 450,
     layout: 'card',
 
     header: {
@@ -33,18 +33,25 @@ Ext.define('Bookmarks.view.login.Login', {
             id: 'usernameField',
             name: 'username',
             fieldLabel: 'Username',
-            allowBlank: false
+            width: '80%',
+            allowBlank: false,
+            maxLength: 128,
+            enforceMaxLength: true
         }, {
             xtype: 'textfield',
+            id: 'passwordField',
             name: 'password',
             fieldLabel: 'Password',
+            width: '80%',
             allowBlank: false,
             inputType: 'password',
+            maxLength: 128,
+            enforceMaxLength: true,
             listeners: {
                 specialkey: function (field, e) {
                     if (field.getValue() !== '' && Ext.getCmp('usernameField').getValue() !== '') {
                         if (e.getKey() === e.ENTER) {
-                            // submit the form!
+                            // submit the form
                             Ext.getCmp('loginButton').fireEvent('click');
                         }
                     }

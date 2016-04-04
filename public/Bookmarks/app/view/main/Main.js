@@ -86,7 +86,7 @@ Ext.define('Bookmarks.view.main.Main', {
         }]
     }, {
         title: 'Users',
-        iconCls: 'x-fa fa-user',
+        iconCls: 'x-fa fa-bluetooth',
         bind: {
             html: '{loremIpsum}'
         }
