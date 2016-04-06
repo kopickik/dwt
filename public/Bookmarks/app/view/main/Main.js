@@ -5,6 +5,10 @@ Ext.define('Bookmarks.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
+        'Ext.grid.*',
+        'Ext.data.*',
+        'Ext.util.*',
+        'Ext.toolbar.Paging',
 
         'Bookmarks.view.main.MainController',
         'Bookmarks.view.main.MainModel'
@@ -54,7 +58,7 @@ Ext.define('Bookmarks.view.main.Main', {
     },
 
     defaults: {
-        bodyPadding: 20,
+        bodyPadding: 0,
         tabConfig: {
             plugins: 'responsive',
             responsiveConfig: {
@@ -76,13 +80,24 @@ Ext.define('Bookmarks.view.main.Main', {
         iconCls: 'x-fa fa-home',
         // the following grid shares a store with the classic version's grid as well
         items: [{
-            xtype: 'grid',
+            xtype: 'gridpanel',
             title: 'Bookmarks',
             bind: '{bookmarks}',
             columns: [
-                { text: 'Name', dataIndex: 'name', flex: 1 },
-                { text: 'URL', dataIndex: 'url', flex: 1 }
-            ]
+                { text: 'Name', sortable: true, dataIndex: 'name', flex: 1 },
+                { text: 'URL', sortable: true, dataIndex: 'url', flex: 1 }
+            ],
+            dockedItems: [{
+                xtype: 'pagingtoolbar',
+                dock: 'bottom',
+                displayInfo: true,
+                bind: {
+                    store: '{bookmarks}'
+                }
+            }],
+            viewConfig: { stripeRows: true },
+            height: 400,
+            scrollable: true
         }]
     }, {
         title: 'Users',

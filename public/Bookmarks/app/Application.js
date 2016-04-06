@@ -18,9 +18,8 @@ Ext.define('Bookmarks.Application', {
         var loggedIn;
 
         loggedIn = localStorage.getItem('user-token');
-
         Ext.create({
-            xtype: loggedIn? 'app-main' : 'login'
+            xtype: loggedIn ? 'app-main' : 'login'
         });
     }
 });

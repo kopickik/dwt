@@ -15,7 +15,9 @@ Ext.define('Bookmarks.view.main.MainController', {
 
     getTokenFromLocalStorage: function () {
         var token = localStorage.getItem('user-token');
-        this.getViewModel().set('token', token);
+        if (token) {
+            this.getViewModel().set('token', token);
+        }
     },
 
     onLogoutClick: function () {
