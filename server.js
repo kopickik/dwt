@@ -27,7 +27,7 @@ app.use('/api', expressJwt({ secret: secret }));
 
 // @endpoint [/authenticate]
 app.post('/authenticate', function (req, res) {
-    var username = req.body.username;
+    var username = req.body.userName;
     var password = req.body.password;
 
     if ( !(username === 'jsmith' && password === 'pword' )) {

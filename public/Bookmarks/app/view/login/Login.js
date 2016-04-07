@@ -31,7 +31,7 @@ Ext.define('Bookmarks.view.login.Login', {
         items: [{
             xtype: 'textfield',
             id: 'usernameField',
-            name: 'username',
+            name: 'userName',
             fieldLabel: 'Username',
             width: '80%',
             allowBlank: false,
@@ -61,6 +61,20 @@ Ext.define('Bookmarks.view.login.Login', {
             xtype: 'displayfield',
             hideEmptyLabel: false,
             value: 'Username and password are case sensitive.'
+        }, {
+            xtype: 'hiddenfield',
+            id: 'client_id',
+            name: 'client_id',
+            value: '6VytS240mp4LICiUfzILcpxbZbPPsaXfWKbzG398dlk=',
+            readOnly: true,
+            fieldCls: 'x-item-disabled'
+        }, {
+            xtype: 'hiddenfield',
+            id: 'grant_type',
+            name: 'grant_type',
+            value: 'password',
+            readOnly: true,
+            fieldCls: 'x-item-disabled'
         }],
         buttons: [{
             text: 'Login',
@@ -70,6 +84,13 @@ Ext.define('Bookmarks.view.login.Login', {
                 click: 'doLogin'
             },
             iconCls: 'x-fa fa-check'
+        }, {
+            text: 'Login with Atlas Auth Server',
+            id: 'AtlasLoginButton',
+            iconCls: 'x-fa fa-globe',
+            listeners: {
+                click: 'doLoginAtlas'
+            }
         }]
     }]
 
