@@ -11,12 +11,20 @@ Ext.define('Bookmarks.view.main.MainController', {
 
     init: function () {
         this.getTokenFromLocalStorage();
+        this.getAccessTokenFromLocalStorage();
     },
 
     getTokenFromLocalStorage: function () {
         var token = localStorage.getItem('user-token');
         if (token) {
             this.getViewModel().set('token', token);
+        }
+    },
+
+    getAccessTokenFromLocalStorage: function() {
+        var access_token = localStorage.getItem('access-token');
+        if (access_token) {
+            this.getViewModel().set('access_token', access_token);
         }
     },
 

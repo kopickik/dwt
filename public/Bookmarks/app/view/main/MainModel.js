@@ -15,13 +15,41 @@ Ext.define('Bookmarks.view.main.MainModel', {
     },
 
     stores: {
+        modules: {
+            type: 'store',
+            remoteSort: true,
+            enablePaging: true,
+            pageSize: 5,
+            lastOptions: {start: 0, limit: 5, page: 1},
+            id: 'modules',
+            autoLoad: {
+                params: {
+                    start: 0,
+                    limit: 5
+                }
+            },
+            fields: [
+                'Name', 'ID'
+            ],
+            proxy: {
+                type: 'rest',
+                api: {
+                    read: 'http://vdimivsdp018:81/api/Application/modules'
+                },
+                headers: {
+                    'Authorization': 'Bearer {access_token}',
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        },
         bookmarks: {
             type: 'store',
             remoteSort: true,
             enablePaging: true,
             pageSize: 5,
             lastOptions: {start: 0, limit: 5, page: 1},
-            id: 'bookmarksStore',
+            id: 'bookmarks',
             autoLoad: {
                 params: {
                     start: 0,

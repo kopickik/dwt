@@ -100,11 +100,28 @@ Ext.define('Bookmarks.view.main.Main', {
             scrollable: true
         }]
     }, {
-        title: 'Users',
-        iconCls: 'x-fa fa-bluetooth',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        title: 'Modules',
+        iconCls: 'x-fa fa-book',
+        items: [{
+            xtype: 'gridpanel',
+            title: 'Modules',
+            bind: '{modules}',
+            columns: [
+                { text: 'Name', sortable: true, dataIndex: 'Name', flex: 1 },
+                { text: 'ID', sortable: true, dataIndex: 'ID', flex: 1 }
+            ],
+            dockedItems: [{
+                xtype: 'pagingtoolbar',
+                dock: 'bottom',
+                displayInfo: true,
+                bind: {
+                    store: '{modules}'
+                }
+            }],
+            viewConfig: { stripeRows: true },
+            height: 400,
+            scrollable: true
+        }]
     }, {
         title: 'Groups',
         iconCls: 'x-fa fa-users',
