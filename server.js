@@ -7,10 +7,6 @@ var express             = require('express'),
     expressJwt          = require('express-jwt'),
     jwt                 = require('jsonwebtoken');
 
-var groups              = require('./routes/groups/routes');
-var generic             = require('./routes/generic/routes');
-var build               = require('./routes/build/index');
-var members             = require('./routes/members/routes');
 var secret = 'Your4w3s0me-S3cr3t';
 
 var app = express();
@@ -115,12 +111,6 @@ app.use((err, req, res, next) => {
     next(err);
 });
 
-mongoose.connect('mongodb://localhost/bookmarks');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', (callback) => {
-    console.log('Connected to MongoDB!');
-});
 
 var serverPort = process.env.SERVER_PORT || 3000;
 app.listen(serverPort, function() {
