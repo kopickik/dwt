@@ -6,7 +6,7 @@ Ext.define('Bookmarks.view.main.MainModel', {
 
     alias: 'viewmodel.main',
 
-    requires: ['MyCustomProxy', 'MyPagingStore'],
+    requires: ['MyCustomProxy', 'MyPagingStore', 'Bookmarks.lib.RestException'],
 
     data: {
         name: 'Bookmarks',
@@ -40,6 +40,11 @@ Ext.define('Bookmarks.view.main.MainModel', {
                     'Authorization': 'Bearer {access_token}',
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
+                },
+                listeners: {
+                    exception: function (proxy, response, operation) {
+                        Bookmarks.lib.RestException.exception(proxy, response, operation);
+                    }
                 }
             }
         },
@@ -77,6 +82,10 @@ Ext.define('Bookmarks.view.main.MainModel', {
                     rootProperty: 'data'
                 },
                 listeners: {
+                    exception: function (operation, proxy, response) {
+                        console.log(response);
+                        Bookmarks.lib.RestException.exception(operation, proxy, response);
+                    }
                 }
             }
         }

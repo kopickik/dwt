@@ -12,14 +12,14 @@ Ext.define('Bookmarks.Application', {
         // TODO: add global / shared stores here
     ],
 
-    views: ['login.Login', 'main.Main'],
+    views: ['bunker.Bunker', 'login.Login', 'main.Main'],
 
     launch: function () {
         var loggedIn;
 
         loggedIn = localStorage.getItem('user-token');
         Ext.create({
-            xtype: loggedIn ? 'app-main' : 'login'
+            xtype: loggedIn ? 'app-main' : 'bunker'
         });
     }
 });

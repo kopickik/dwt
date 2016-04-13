@@ -14,6 +14,10 @@ Ext.define('Bookmarks.view.main.MainController', {
         this.getAccessTokenFromLocalStorage();
     },
 
+    routes: {
+        'foo/bar': 'handleFoo'
+    },
+
     getTokenFromLocalStorage: function () {
         var token = localStorage.getItem('user-token');
         if (token) {
@@ -26,6 +30,10 @@ Ext.define('Bookmarks.view.main.MainController', {
         if (access_token) {
             this.getViewModel().set('access_token', access_token);
         }
+    },
+
+    handleFoo: function () {
+        console.log(document.location);
     },
 
     onLogoutClick: function () {

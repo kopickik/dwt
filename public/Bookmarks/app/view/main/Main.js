@@ -29,10 +29,10 @@ Ext.define('Bookmarks.view.main.Main', {
             align: 'stretchmax'
         },
         title: {
-            text: 'Bookmarks',
+            text: 'Atlas',
             flex: 0
         },
-        iconCls: 'x-fa fa-twitter',
+        iconCls: 'x-fa fa-globe',
         items: [{
             xtype: 'button',
             text: 'Logout',
@@ -81,7 +81,8 @@ Ext.define('Bookmarks.view.main.Main', {
         // the following grid shares a store with the classic version's grid as well
         items: [{
             xtype: 'gridpanel',
-            title: 'Bookmarks',
+            ui: 'slated',
+            title: 'Development Bookmarks',
             bind: '{bookmarks}',
             columns: [
                 { text: 'Name', sortable: true, dataIndex: 'name', flex: 1 },
@@ -104,6 +105,7 @@ Ext.define('Bookmarks.view.main.Main', {
         iconCls: 'x-fa fa-book',
         items: [{
             xtype: 'gridpanel',
+            ui: 'slated',
             title: 'Modules',
             bind: '{modules}',
             columns: [
@@ -120,7 +122,14 @@ Ext.define('Bookmarks.view.main.Main', {
             }],
             viewConfig: { stripeRows: true },
             height: 400,
-            scrollable: true
+            scrollable: true,
+            renderer: function (loader, response, request) {
+                var callback = function () {
+                    loader.getTarget().updateLayout();
+                }
+                loader.getTarget().update(response.responseText, request.scripts === true, callback);
+                return true;
+            }
         }]
     }, {
         title: 'Groups',

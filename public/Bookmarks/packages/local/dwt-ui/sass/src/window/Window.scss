@@ -1,0 +1,14 @@
+@import '../../var/custom/Colors.scss';
+
+@include extjs-window-ui(
+    $ui: 'slated',
+
+    $ui-border-color: $blue-dark-2
+);
+
+.x-window-slated,
+.x-window-header-slated,
+.x-window-header-slated-top {
+    background: $c-gradient;
+    background: $c-gradient-windows;
+}

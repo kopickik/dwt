@@ -24,6 +24,8 @@ Ext.define('Bookmarks.view.login.Login', {
         }
     },
 
+    ui: 'slated',
+
     items: [{
         xtype: 'form',
         reference: 'form',

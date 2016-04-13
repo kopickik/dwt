@@ -22,7 +22,8 @@
      */
     "classpath": [
         "app",
-        "${toolkit.name}/src"
+        "${toolkit.name}/src",
+        "${app.dir}/lib"
     ],
 
     /**

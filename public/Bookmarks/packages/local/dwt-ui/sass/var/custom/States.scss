@@ -1,0 +1,12 @@
+// Notification colors, app states, etc.
+@import 'Colors.scss';
+
+.Notification {
+    & .error {
+        background-color: $c-error;
+    }
+}
+
+.error {
+    background-color: $c-error;
+}
