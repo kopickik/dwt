@@ -42,38 +42,32 @@ Ext.define('Bookmarks.view.main.Claims', {
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Name',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Address',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Gender',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Member ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Phone',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'DoB',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             }
                         ]
                     },
@@ -83,32 +77,27 @@ Ext.define('Bookmarks.view.main.Claims', {
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Name',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Address',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'NPI',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Member ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Phone',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             }
                         ]
                     },
@@ -118,38 +107,32 @@ Ext.define('Bookmarks.view.main.Claims', {
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Name',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Phone',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Service Type',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Address',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Fax',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Pharmacy ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             }
                         ]
                     },
@@ -159,50 +142,42 @@ Ext.define('Bookmarks.view.main.Claims', {
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Claim ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Pricing',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Source',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Formulary Detail Info',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Status',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Authorization ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Patient Segment info not in Member Section',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Drug Detail (NDC, GCN, TYPE, DAW, Copound, GPI, Qty)',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             }
                         ]
                     },
@@ -233,8 +208,7 @@ Ext.define('Bookmarks.view.main.Claims', {
                         xtype:      'textareafield',
                         title:      'Hold Payment',
                         fieldLabel: 'Notes',
-                        value:      'PaymentHold',
-                        flex:       1
+                        value:      'PaymentHold'
                     },
                     {
                         title: 'Audit Log Info',
@@ -242,20 +216,17 @@ Ext.define('Bookmarks.view.main.Claims', {
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Log ID',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Log item Source (User, system)',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             },
                             {
                                 xtype:      'textfield',
                                 fieldLabel: 'Logged Item Date',
-                                value:      'TBD',
-                                flex:       1
+                                value:      'TBD'
                             }
                         ]
                     }
