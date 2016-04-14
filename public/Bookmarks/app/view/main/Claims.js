@@ -15,59 +15,129 @@ Ext.define('Bookmarks.view.main.Claims', {
                 iconCls: 'x-fa fa-home',
                 items:   [
                     {
-                        xtype:       'gridpanel',
-                        title:       'Claim History',
-                        columns:     [
-                            {text: 'Claim ID', sortable: true, dataIndex: 'name', flex: 1},
-                            {text: 'Member Name', sortable: true, dataIndex: 'name', flex: 1},
-                            {text: 'DoB', sortable: true, dataIndex: 'name', flex: 1},
-                            {text: 'Status', sortable: true, dataIndex: 'name', flex: 1},
-                            {text: 'Source', sortable: true, dataIndex: 'name', flex: 1}
-                        ],
-                        dockedItems: [{
-                            xtype:       'pagingtoolbar',
-                            dock:        'bottom',
-                            displayInfo: true,
-                            bind:        {
-                                store: '{bookmarks}'
+                        xtype: 'container',
+                        title: 'Claim Search',
+                        items: [
+                            {
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Claim ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Member ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        text:  'Search',
+                                        scale: 'medium'
+                                    },
+                                    {
+                                        xtype: 'component',
+                                        html:  '<a href="#">Advanced Search</a>'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Last Name',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'First Name',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        title:  'Date Picker',
+                                        margin: '0 20 0 0',
+                                        items:  {
+                                            xtype: 'datepicker'
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                xtype:       'gridpanel',
+                                title:       'Claim History',
+                                columns:     [
+                                    {text: 'Claim ID', sortable: true, dataIndex: 'name', flex: 1},
+                                    {text: 'Member Name', sortable: true, dataIndex: 'name', flex: 1},
+                                    {text: 'DoB', sortable: true, dataIndex: 'name', flex: 1},
+                                    {text: 'Status', sortable: true, dataIndex: 'name', flex: 1},
+                                    {text: 'Source', sortable: true, dataIndex: 'name', flex: 1}
+                                ],
+                                dockedItems: [{
+                                    xtype:       'pagingtoolbar',
+                                    dock:        'bottom',
+                                    displayInfo: true,
+                                    bind:        {
+                                        store: '{bookmarks}'
+                                    }
+                                }],
+                                viewConfig:  {stripeRows: true},
+                                height:      400,
+                                scrollable:  true
                             }
-                        }],
-                        viewConfig:  {stripeRows: true},
-                        height:      400,
-                        scrollable:  true
+                        ]
                     },
                     {
                         title: 'Member Info',
                         items: [
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Name',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Name',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Address',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Gender',
+                                        value:      'TBD'
+                                    }
+                                ]
                             },
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Address',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Gender',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Member ID',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Phone',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'DoB',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Member ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Phone',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'DoB',
+                                        value:      'TBD'
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -75,29 +145,41 @@ Ext.define('Bookmarks.view.main.Claims', {
                         title: 'Prescriber Info',
                         items: [
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Name',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Name',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Address',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'NPI',
+                                        value:      'TBD'
+                                    }]
                             },
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Address',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'NPI',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Member ID',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Phone',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Member ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Phone',
+                                        value:      'TBD'
+                                    }]
                             }
                         ]
                     },
@@ -105,34 +187,46 @@ Ext.define('Bookmarks.view.main.Claims', {
                         title: 'Pharmacy Info',
                         items: [
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Name',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Name',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Phone',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Service Type',
+                                        value:      'TBD'
+                                    }]
                             },
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Phone',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Service Type',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Address',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Fax',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Pharmacy ID',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Address',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Fax',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Pharmacy ID',
+                                        value:      'TBD'
+                                    }]
                             }
                         ]
                     },
@@ -140,44 +234,62 @@ Ext.define('Bookmarks.view.main.Claims', {
                         title: 'Claim Detail',
                         items: [
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Claim ID',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Claim ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Pricing',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Source',
+                                        value:      'TBD'
+                                    }]
                             },
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Pricing',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Formulary Detail Info',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Status',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Authorization ID',
+                                        value:      'TBD'
+                                    }]
                             },
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Source',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Formulary Detail Info',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Status',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Authorization ID',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Patient Segment info not in Member Section',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Drug Detail (NDC, GCN, TYPE, DAW, Copound, GPI, Qty)',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Patient Segment info not in Member Section',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Drug Detail (NDC, GCN, TYPE, DAW, Copound, GPI, Qty)',
+                                        value:      'TBD'
+                                    }]
                             }
                         ]
                     },
@@ -214,19 +326,25 @@ Ext.define('Bookmarks.view.main.Claims', {
                         title: 'Audit Log Info',
                         items: [
                             {
-                                xtype:      'textfield',
-                                fieldLabel: 'Log ID',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Log item Source (User, system)',
-                                value:      'TBD'
-                            },
-                            {
-                                xtype:      'textfield',
-                                fieldLabel: 'Logged Item Date',
-                                value:      'TBD'
+                                xtype:  'container',
+                                layout: 'hbox',
+                                margin: '0 0 10 0',
+                                items:  [
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Log ID',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Log item Source (User, system)',
+                                        value:      'TBD'
+                                    },
+                                    {
+                                        xtype:      'textfield',
+                                        fieldLabel: 'Logged Item Date',
+                                        value:      'TBD'
+                                    }]
                             }
                         ]
                     }
