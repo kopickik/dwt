@@ -1,10 +1,10 @@
 Ext.define('Bookmarks.view.bunker.Bunker', {
-    extend: 'Ext.container.Container',
+    extend: 'Ext.container.Viewport',
     xtype: 'bunker',
     layout: {
-        type: 'vbox',
-        align: 'middle',
-        pack: 'center'
+        type: 'border',
+        //align: 'middle',
+        //pack: 'center'
     },
 
     plugins: 'viewport',
@@ -12,6 +12,9 @@ Ext.define('Bookmarks.view.bunker.Bunker', {
     width: '100%',
 
     items: [{
+        region: 'north',
+        xtype: 'appHeader'
+    }, {
         xtype: 'login'
     }],
 

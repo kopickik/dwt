@@ -1,0 +1,18 @@
+@import '../../var/custom/Colors.scss';
+.app-header {
+    border-bottom: 1px solid darken(#d4b36a, 20);
+    background: rgba(35, 35, 35, .8);
+    box-shadow: 0 1px 4px rgba(170, 134, 57, .7);
+}
+
+.app-header-title {
+    padding: 15px 0 10px;
+    font-size: 20px;
+    color: lighten($brown-light-1, 15);
+    font-weight: bold;
+}
+
+.app-header-logo {
+    background: url(get-resource-path('images/Meridian-white.png', 'toolkit')) no-repeat center 2px;
+}
+
