@@ -1,8 +1,9 @@
 Ext.define('Bookmarks.view.bunker.Bunker', {
     extend: 'Ext.container.Viewport',
     xtype: 'bunker',
+    controller: 'bunker',
     layout: {
-        type: 'border',
+        type: 'border'
         //align: 'middle',
         //pack: 'center'
     },
@@ -16,6 +17,9 @@ Ext.define('Bookmarks.view.bunker.Bunker', {
         xtype: 'appHeader'
     }, {
         xtype: 'login'
+    }, {
+        region: 'south',
+        xtype: 'appFooter'
     }],
 
     listeners: {

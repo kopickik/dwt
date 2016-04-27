@@ -1,0 +1,26 @@
+@import '../../../var/custom/Colors';
+.app-header {
+    border-bottom: 1px solid darken(#d4b36a, 20);
+    background: #fbfbfb;
+    box-shadow: 0 1px 4px rgba(170, 134, 57, .8);
+}
+
+.app-header-title {
+    padding: 15px 0 10px;
+    font-size: 24px;
+    color: $brown-light-1;
+    font-weight: bold;
+}
+
+.app-header-logo {
+    height: auto;
+    width: 185px;
+    background: url(get-resource-path('images/MHP-600.png', 'toolkit')) no-repeat center;
+    background-size: 185px auto;
+}
+
+.app-header-welcome {
+    color: #333;
+    text-align: center;
+    font-size: 12px;
+}

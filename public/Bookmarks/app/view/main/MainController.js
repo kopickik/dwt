@@ -5,7 +5,7 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('Bookmarks.view.main.MainController', {
-    extend: 'Ext.app.ViewController',
+    extend: 'Bookmarks.controller.AbstractViewController',
 
     alias: 'controller.main',
 
@@ -38,9 +38,10 @@ Ext.define('Bookmarks.view.main.MainController', {
 
     onLogoutClick: function () {
         localStorage.removeItem('user-token');
+        this.fireEvent('logout');
         this.getView().destroy();
         Ext.create({
-            xtype: 'login'
+            xtype: 'bunker'
         });
     }
 

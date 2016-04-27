@@ -211,6 +211,11 @@
             "path": "app.js",
             "bundle": true
         }
+        // {
+        //     "path": "../../dist/bundle.js",
+        //     "bundle": false,
+        //     "update": "full"
+        // }
     ],
 
     
