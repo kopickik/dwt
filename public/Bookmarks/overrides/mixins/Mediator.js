@@ -12,7 +12,7 @@ Ext.define('Bookmarks.mixins.Mediator', {
 
     doInit: function () {
         var me = this;
-        console.log('Initial Config', me.subscribe, me);
+        //console.log('Initial Config', me.subscribe, me);
         if (Ext.isObject(me.subscribe)) {
             Ext.Object.each(me.subscribe, me.addSubscription, me);
         }

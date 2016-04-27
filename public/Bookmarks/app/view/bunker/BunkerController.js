@@ -28,7 +28,7 @@ Ext.define('Bookmarks.view.bunker.BunkerController', {
     },
 
     onLogoutSuccess: function() {
-        this.getView().create();
+        Bookmarks.view.bunker.Bunker.create();
     }
 
 });
