@@ -2,31 +2,44 @@ Ext.define('Bookmarks.view.login.LoginController', {
     extend: 'Bookmarks.controller.AbstractViewController',
     alias: 'controller.login',
 
+    loginText: 'Logging in...',
+
+    onSpecialKey: function (field, e) {
+        if (e.getKey() === e.ENTER) {
+            this.doLogin();
+        }
+    },
+
+    onLoginClick: function() {
+        this.doLogin();
+    },
+
     doLogin: function () {
         var me = this,
             view = this.getView(),
             form = view.down('form');
 
-        Ext.Ajax.request({
-            url: 'authenticate',
-            method: 'POST',
-            jsonData: form.getValues(),
-            success: function (response) {
-                var data = Ext.decode(response.responseText);
-                if (data.token) {
-                    me.fireEvent('authenticateSuccess');
-                    view.destroy();
-                    me.saveToken(data.token);
-                    Ext.widget('app-main');
+        if (form.isValid()) {
+            Ext.getBody().mask(this.loginText);
+            Ext.Ajax.request({
+                url: 'authenticate',
+                method: 'POST',
+                jsonData: form.getValues(),
+                success: function (response) {
+                    var data = Ext.decode(response.responseText);
+                    if (data.token) {
+                        me.saveToken(data.token);
+                        view.destroy();
+                        me.fireEvent('authenticateSuccess');
+                    }
+                },
+                failure: function () {
+                    me.clearToken();
+                    me.fireEvent('authenticateFailure');
                 }
-            },
-            failure: function () {
-                me.fireEvent('authenticateFailure');
-                me.clearToken();
-                Ext.getCmp('usernameField').focus();
-                Ext.Msg.alert('Error', 'Username or password are invalid.');
-            }
-        });
+            });
+        }
+
     },
 
     saveToken: function (token) {
@@ -71,5 +84,14 @@ Ext.define('Bookmarks.view.login.LoginController', {
         //         Ext.Msg.alert('Error', 'Something went wrong.');
         //     }
         // });
+    },
+
+    onSpecialKey: function (field, e) {
+        if (field.getValue() !== '' && Ext.getCmp('usernameField').getValue() !== '') {
+            if (e.getKey() === e.ENTER) {
+                // submit the form
+                Ext.getCmp('loginButton').fireEvent('click');
+            }
+        }
     }
 });

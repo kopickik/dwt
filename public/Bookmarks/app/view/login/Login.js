@@ -50,14 +50,7 @@ Ext.define('Bookmarks.view.login.Login', {
             maxLength: 128,
             enforceMaxLength: true,
             listeners: {
-                specialkey: function (field, e) {
-                    if (field.getValue() !== '' && Ext.getCmp('usernameField').getValue() !== '') {
-                        if (e.getKey() === e.ENTER) {
-                            // submit the form
-                            Ext.getCmp('loginButton').fireEvent('click');
-                        }
-                    }
-                }
+                specialkey: 'onSpecialKey'
             }
         }, {
             xtype: 'displayfield',
@@ -82,6 +75,7 @@ Ext.define('Bookmarks.view.login.Login', {
             text: 'Login',
             id: 'loginButton',
             formBind: true,
+            ui: 'mrx',
             listeners: {
                 click: 'doLogin'
             },
@@ -89,6 +83,7 @@ Ext.define('Bookmarks.view.login.Login', {
         }, {
             text: 'Login with Atlas Auth Server',
             id: 'AtlasLoginButton',
+            ui: 'mrx',
             iconCls: 'x-fa fa-globe',
             listeners: {
                 click: 'doLoginAtlas'

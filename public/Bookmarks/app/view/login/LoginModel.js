@@ -5,5 +5,15 @@ Ext.define('Bookmarks.view.login.LoginModel', {
 
     data: {
         formTitle: '<span class=\'x-fa fa-lock\'></span> MERLIN Development Login - This is NOT PRODUCTION'
+    },
+
+    stores: {
+        users: {
+            model: 'User',
+
+            autoLoad: false,
+
+            session: true
+        }
     }
 });

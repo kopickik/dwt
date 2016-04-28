@@ -12,3 +12,11 @@
     background: $c-gradient;
     background: $c-gradient-windows;
 }
+
+.custom-error {
+    border-color: darkred;
+    & .x-window-header {
+        background-color: #ff0000;
+        border-color: #eeeeee;
+    }
+}

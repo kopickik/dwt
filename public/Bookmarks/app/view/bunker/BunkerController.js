@@ -9,6 +9,10 @@ Ext.define('Bookmarks.view.bunker.BunkerController', {
     init: function () {
     },
 
+    messages: [
+        'Login successful!', 'Something went wrong.'
+    ],
+
     listen: {
         controller: {
             '*': {
@@ -21,10 +25,14 @@ Ext.define('Bookmarks.view.bunker.BunkerController', {
 
     onAuthenticateSuccess: function() {
         this.getView().destroy();
+        Ext.widget('app-main');
+        Ext.getBody().unmask();
     },
 
     onAuthenticateFailure: function () {
-
+        Ext.getBody().unmask();
+        Ext.getCmp('usernameField').focus();
+        Ext.Msg.alert('Error', 'Username or password invalid.').addCls('custom-error');
     },
 
     onLogoutSuccess: function() {
