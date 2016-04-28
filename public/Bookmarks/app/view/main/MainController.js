@@ -14,6 +14,8 @@ Ext.define('Bookmarks.view.main.MainController', {
         this.getAccessTokenFromLocalStorage();
     },
 
+    defaultToken: 'main',
+
     routes: {
         'foo/bar': 'handleFoo'
     },

@@ -11,7 +11,8 @@ Ext.define('Bookmarks.view.main.Main', {
         'Ext.toolbar.Paging',
 
         'Bookmarks.view.main.MainController',
-        'Bookmarks.view.main.MainModel'
+        'Bookmarks.view.main.MainModel',
+        'Bookmarks.controller.BaseController'
     ],
 
     controller: 'main',
@@ -43,9 +44,10 @@ Ext.define('Bookmarks.view.main.Main', {
     },
     tabBar: {
         flex: 1,
+        id: 'main-tabs',
         layout: {
             align: 'stretch',
-            overflowHandler: 'none'
+            overflowHandler: 'scroller'
         }
     },
     responsiveConfig: {
@@ -76,8 +78,9 @@ Ext.define('Bookmarks.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'x-fa fa-home',
+        title: 'My Claims (bookmarks)',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab1',
         // the following grid shares a store with the classic version's grid as well
         items: [{
             xtype: 'gridpanel',
@@ -101,8 +104,9 @@ Ext.define('Bookmarks.view.main.Main', {
             scrollable: true
         }]
     }, {
-        title: 'Modules',
-        iconCls: 'x-fa fa-book',
+        title: 'Claims Search',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab2',
         items: [{
             xtype: 'gridpanel',
             ui: 'slated',
@@ -132,14 +136,44 @@ Ext.define('Bookmarks.view.main.Main', {
             }
         }]
     }, {
-        title: 'Groups',
-        iconCls: 'x-fa fa-users',
+        title: 'My Benefits &amp; Coverage',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab3',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Settings',
+        title: 'Formulary',
         iconCls: 'x-fa fa-cog',
+        id: 'tab4',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Pharmacy Search',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab5',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Drug Search',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab6',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Documents &amp; Forms',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab7',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Contact',
+        iconCls: 'x-fa fa-cog',
+        id: 'tab8',
         bind: {
             html: '{loremIpsum}'
         }
