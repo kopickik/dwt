@@ -1,3 +1,10 @@
+function setCookie (cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    return document.cookie = cname + "=" + cvalue + "; " + expires;
+};
+
 Ext.define('Bookmarks.view.login.LoginController', {
     extend: 'Bookmarks.controller.AbstractViewController',
     alias: 'controller.login',
@@ -44,6 +51,7 @@ Ext.define('Bookmarks.view.login.LoginController', {
 
     saveToken: function (token) {
         localStorage.setItem('user-token', token);
+        setCookie('usertoken', token, 1);
     },
 
     saveAccessToken: function (accessToken, refreshToken) {

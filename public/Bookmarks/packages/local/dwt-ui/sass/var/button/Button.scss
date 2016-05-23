@@ -1,21 +1,2 @@
 @import '../custom/Colors';
 
-@include extjs-button-small-ui(
-    $ui: 'mrx',
-    $background-color: $mrx-c-2
-    // $background-color-over: ,
-    // $background-color-focus: ,
-    // $background-color-focus-over: ,
-    // $background-color-focus-pressed: ,
-);
-
-@include extjs-button-medium-ui(
-    $ui: 'mrx',
-    $background-color: $mrx-c-2
-);
-
-@include extjs-button-large-ui(
-    $ui: 'mrx',
-    $background-color: $mrx-c-2
-);
-

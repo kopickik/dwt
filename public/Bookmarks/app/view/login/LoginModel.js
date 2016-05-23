@@ -9,7 +9,7 @@ Ext.define('Bookmarks.view.login.LoginModel', {
 
     stores: {
         users: {
-            model: 'User',
+            // model: 'User',
 
             autoLoad: false,
 

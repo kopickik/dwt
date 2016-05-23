@@ -89,6 +89,42 @@ Ext.define('Bookmarks.view.main.MainModel', {
                     }
                 }
             }
+        },
+        claims: {
+            type: 'store',
+            remoteSort: true,
+            enablePaging: true,
+            pageSize: 5,
+            lastOptions: {start: 0, limit: 5, page: 1},
+            id: 'claims',
+            autoLoad: {
+                params: {
+                    start: 0,
+                    limit: 5
+                }
+            },
+            fields: ['claimNum', 'meridianRxId', 'memberName', 'carrier', 'account', 'lob', 'ndc', 'medication',
+            'serviceDate', 'status', 'rxNum', 'ncpdpid', 'pharmacyName', 'prescriberNpi', 'prescriberName'
+            ],
+            proxy: {
+                type: 'rest',
+                api: {
+                    read: '/api/claims'
+                },
+                headers: {
+                    'Authorization': 'Bearer {token}'
+                },
+                reader: {
+                    type: 'json',
+                    rootProperty: 'data'
+                },
+                listeners: {
+                    exception: function (operation, proxy, response) {
+                        console.log(response);
+                        Bookmarks.lib.RestException.exception(operation, proxy, response);
+                    }
+                }
+            }
         }
     }
 

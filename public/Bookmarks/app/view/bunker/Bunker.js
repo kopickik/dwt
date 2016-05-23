@@ -1,6 +1,11 @@
 Ext.define('Bookmarks.view.bunker.Bunker', {
     extend: 'Ext.container.Viewport',
     xtype: 'bunker',
+    requires: [
+        'Bookmarks.view.bunker.BunkerController',
+        'Bookmarks.view.partials.Header',
+        'Bookmarks.view.partials.Footer'
+    ],
     controller: 'bunker',
     layout: {
         type: 'border'

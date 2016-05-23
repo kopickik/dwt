@@ -3,3 +3,9 @@
  */
 
 $enable-font-awesome: dynamic(true);
+
+.claimsSearchForm {
+    & .x-toolbar, .x-toolbar-footer {
+        background: none;
+    }
+}

@@ -110,6 +110,28 @@ app.get('/api/bookmarks', function (req, res) {
     res.json({data: bookmarks});
 });
 
+app.get('/api/claims', function (req, res) {
+    var claims = [{
+        claimNumber: 45, meridianRxId: 849002513247, memberName: 'Lucy Sikorr', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    }, 
+    {
+        claimNumber: 46, meridianRxId: 98761230975, memberName: 'Lucas Mikorr', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    },
+    {
+        claimNumber: 47, meridianRxId: 98762304987, memberName: 'Fred Tracktor', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    },
+    {
+        claimNumber: 48, meridianRxId: 76237642182, memberName: 'Brad Fikorra', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    },
+    {
+        claimNumber: 49, meridianRxId: 98763458762, memberName: 'Monte Harrison', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    },
+    {
+        claimNumber: 50, meridianRxId: 98763287642, memberName: 'Dallas Striker', carrier: 'ACME Carrier', account: 'ACME Account', lob: 'Medicare', ndc: 'XXXX-398i1', medication: 'Prilosec OTC 60 MG', serviceDate: '01/05/2016', status: 'N/A', rxNum: '4510486820', ncpdpid: '19283957', pharmacyName: 'CVS Pharmacy', prescriberNpi: 'u3w457', prescriberName: 'Dr. Todd Stephens'
+    }]
+    res.json({data: claims});
+});
+
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
     next(err);

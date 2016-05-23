@@ -14,9 +14,15 @@
 }
 
 .custom-error {
-    border-color: darkred;
+    border-color: #eeeeee;
     & .x-window-header {
         background-color: #ff0000;
         border-color: #eeeeee;
+    }
+    & .x-btn {
+        background-color: $mrx-c-2;
+    }
+    & .x-btn:hover {
+            background-color: lighten($mrx-c-2, 10%);
     }
 }

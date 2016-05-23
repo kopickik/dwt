@@ -12,7 +12,9 @@ Ext.define('Bookmarks.view.main.Main', {
 
         'Bookmarks.view.main.MainController',
         'Bookmarks.view.main.MainModel',
-        'Bookmarks.controller.BaseController'
+        'Bookmarks.controller.BaseController',
+        'Bookmarks.view.claims.ClaimsSearchForm',
+        'Bookmarks.view.claims.ClaimsSearchGrid'
     ],
 
     controller: 'main',
@@ -81,7 +83,6 @@ Ext.define('Bookmarks.view.main.Main', {
         title: 'My Claims (bookmarks)',
         iconCls: 'x-fa fa-cog',
         id: 'tab1',
-        // the following grid shares a store with the classic version's grid as well
         items: [{
             xtype: 'gridpanel',
             ui: 'slated',
@@ -106,34 +107,11 @@ Ext.define('Bookmarks.view.main.Main', {
     }, {
         title: 'Claims Search',
         iconCls: 'x-fa fa-cog',
-        id: 'tab2',
+        id: 'claimsSearch',
         items: [{
-            xtype: 'gridpanel',
-            ui: 'slated',
-            title: 'Modules',
-            bind: '{modules}',
-            columns: [
-                { text: 'Name', sortable: true, dataIndex: 'Name', flex: 1 },
-                { text: 'ID', sortable: true, dataIndex: 'ID', flex: 1 }
-            ],
-            dockedItems: [{
-                xtype: 'pagingtoolbar',
-                dock: 'bottom',
-                displayInfo: true,
-                bind: {
-                    store: '{modules}'
-                }
-            }],
-            viewConfig: { stripeRows: true },
-            height: 400,
-            scrollable: true,
-            renderer: function (loader, response, request) {
-                var callback = function () {
-                    loader.getTarget().updateLayout();
-                }
-                loader.getTarget().update(response.responseText, request.scripts === true, callback);
-                return true;
-            }
+            xtype: 'claimsSearchForm'
+        }, {
+            xtype: 'claimsSearchGrid'
         }]
     }, {
         title: 'My Benefits &amp; Coverage',

@@ -1,5 +1,26 @@
+@import '../../var/custom/Colors';
+
+@include extjs-button-small-ui(
+    $ui: 'mrx',
+    $background-color: $mrx-c-2
+    // $background-color-over: ,
+    // $background-color-focus: ,
+    // $background-color-focus-over: ,
+    // $background-color-focus-pressed: ,
+);
+
+@include extjs-button-medium-ui(
+    $ui: 'mrx',
+    $background-color: $mrx-c-2
+);
+
+@include extjs-button-large-ui(
+    $ui: 'mrx',
+    $background-color: $mrx-c-2
+);
+
 .x-btn-mrx-small,
 .x-btn-mrx-medium,
 .x-btn-mrx-large {
-    transition: background-color .3s linear;
+    transition: background-color .2s ease-out;
 }

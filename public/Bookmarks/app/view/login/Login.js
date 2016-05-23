@@ -80,14 +80,14 @@ Ext.define('Bookmarks.view.login.Login', {
                 click: 'doLogin'
             },
             iconCls: 'x-fa fa-check'
-        }, {
-            text: 'Login with Atlas Auth Server',
-            id: 'AtlasLoginButton',
-            ui: 'mrx',
-            iconCls: 'x-fa fa-globe',
-            listeners: {
-                click: 'doLoginAtlas'
-            }
+        // }, {
+        //     text: 'Login with Atlas Auth Server',
+        //     id: 'AtlasLoginButton',
+        //     ui: 'mrx',
+        //     iconCls: 'x-fa fa-globe',
+        //     listeners: {
+        //         click: 'doLoginAtlas'
+        //     }
         }]
     }]
 
