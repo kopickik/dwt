@@ -32,11 +32,15 @@ Ext.define('Bookmarks.view.claims.ClaimsSearchGrid', {
             store: '{claims}'
         },
         items: [{
-            xtype: 'button',
-            text: 'Export to Excel',
-            iconCls: 'x-fa fa-excel-o',
-            listeners: {}
-        }]
+            xtype: 'container',
+            items: [{
+                xtype: 'button',
+                text: 'Export to Excel',
+                iconCls: 'x-fa fa-file-excel-o',
+                menuAlign: 'tr-br?'
+            }]
+        }],
+        layout: 'hbox'
     }],
     viewConfig: { stripeRows: true },
     height: 400,

@@ -20,7 +20,8 @@ Ext.define('Bookmarks.view.claims.ClaimsSearchForm', {
                     width: 400,
                     id: 'claimsSearchMemberField',
                     name: 'claimsSearchMemberField',
-                    fieldLabel: 'Member'
+                    fieldLabel: 'Member',
+                    emptyText: '(e.g. John)'
                 }, {
                     xtype: 'datefield',
                     id: 'claimsSearchServiceDateField01',
@@ -43,7 +44,14 @@ Ext.define('Bookmarks.view.claims.ClaimsSearchForm', {
                     text: 'Help',
                     listeners: {
                         // click: 'doClickHelp'
-                    },
+                        click: function() {
+                            Ext.Msg.show({
+                                title: 'Help window',
+                                message: 'This is where the help contents will go.',
+                                buttons: Ext.Msg.OK
+                            });
+                        }
+                    } ,
                     iconCls: 'x-fa fa-question-circle',
                     flex: 1
                 }]
@@ -63,7 +71,8 @@ Ext.define('Bookmarks.view.claims.ClaimsSearchForm', {
                     name: 'claimsSearchProviderField',
                     fieldLabel: 'Provider',
                     flex: 5,
-                    margin: '0 0 0 12'
+                    margin: '0 0 0 12',
+                    emptyText: '(e.g. Target Pharmacy MI 48188)'
                 }, {
                     xtype: 'displayfield',
                     flex: 5
@@ -77,14 +86,16 @@ Ext.define('Bookmarks.view.claims.ClaimsSearchForm', {
                     id: 'claimsSearchNDCField',
                     name: 'claimsSearchNDCField',
                     fieldLabel: 'NDC',
-                    width: 400
+                    width: 400,
+                    emptyText: '(e.g. Nexium)'
                 }, {
                     xtype: 'textfield',
                     id: 'claimsSearchGCNField',
                     name: 'claimsSearchGCNField',
                     fieldLabel: 'GCN',
                     flex: 5,
-                    margin: '0 0 0 12'
+                    margin: '0 0 0 12',
+                    emptyText: '(e.g. Nexium)'
                 }, {
                     xtype: 'displayfield',
                     flex: 5
