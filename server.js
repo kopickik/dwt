@@ -42,7 +42,7 @@ app.post('/authenticate', function (req, res) {
         };
 
         // generate the jwt token with our user info
-        var token = jwt.sign(user, secret, {expiresIn: 7200});// two hours in seconds
+        var token = jwt.sign(user, secret, {expiresIn: 10});// in seconds
 
         // the user object is included in the token!
         res.json({

@@ -28,9 +28,9 @@ Ext.define('Bookmarks.lib.RestException', {
             switch (response.status) {
                 case 401:
                 case 403:
-                    titleMsg = "Error " + response.status;
-                    msg = response.statusText + ' ' + response.responseText;
-                    msg += '<br/>Triggered by:<br/>' + response.request.method + ' ' + response.request.url;
+                    titleMsg = "Error " + response.status + ' ' + response.statusText;
+                    //msg = response.responseText;
+                    msg = '<br/>Triggered by:<br/>' + response.request.method + ' ' + response.request.url;
                     break;
                 case 200:
                     break;
@@ -70,7 +70,7 @@ Ext.define('Bookmarks.lib.RestException', {
         // });
     },
     reload : function() {
-        location.reload();
+        document.location.reload();
     },
 
     getParameterByName: function (name, url) {
