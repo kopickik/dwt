@@ -23,7 +23,7 @@ app.disable('x-powered-by');
 
 app.use('/', express.static(__dirname + '/public/Bookmarks'));
 // protect our api
-app.use('/api', expressJwt({ secret: secret }));
+app.use('/api', expressJwt({ secret: secret}));
 
 // @endpoint [/authenticate]
 app.post('/authenticate', function (req, res) {

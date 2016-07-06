@@ -8,8 +8,11 @@
     "start": "nodemon --watch public/Bookmarks/app entrypoint.js"
   },
   "keywords": [],
-  "author": "Atlas SWAT",
-  "license": "",
+  "author": {
+    "name": "Atlas SWAT",
+    "email": "kyle.kopicki@mhplan.com"
+  },
+  "license": "The MIT License (MIT)",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.7.4",
