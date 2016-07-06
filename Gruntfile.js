@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         browserify: {
           debug: {
             files: {
-              'public/Bookmarks/dist/common/mytest.js' : 'lib/mytest.js'
+              'public/Bookmarks/dist/common/mytest.js' : ['lib/mytest.js', 'lib/modules/program.js']
             },
             options: {
               debug: true

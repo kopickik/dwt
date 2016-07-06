@@ -28,7 +28,7 @@ The [CommonJS Spec](http://wiki.commonjs.org/wiki/Modules) prescribes methods fo
 - A relative path to the script you are requiring from (e.g., `var myModule = require('./lib/myModule'))
 - A path to a directory.  In this case, Node will look for an index.js in the directory specified
 - An absolute path (used very rarely)
-- The name of a package, for example, ```var async = require('async')```.  [Async](https://www.npmjs.org/package/async) is a system Node module.  Other common ones include [http](https://www.npmjs.org/package/http), [fs](https://www.npmjs.org/package/fs), [express](https://www.expressjs.com), etc.
+- The name of a package, for example, ```var async = require('async')```.  [Async](https://www.npmjs.org/package/async) is a system Node module.  Other common ones include [http](https://www.npmjs.org/package/http), [fs](https://www.npmjs.org/package/fs), [express](https://www.expressjs.com/en/api), etc.
 
 ##### Run ```grunt``` from the root of this repo to build modules located in the ```lib/modules``` directory, and take a look at the Gruntfile.js to see just what's going on.
 
